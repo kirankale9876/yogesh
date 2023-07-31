@@ -1,0 +1,19 @@
+pipeline {
+agent any
+environment {
+name = 'Kiran'
+}
+
+stages {
+stage(‘Environment_variable’) {
+    input {
+message "Should we continue?"
+ok "Yes we should"
+}
+steps {
+sh 'echo "${BUILD_ID}"'
+sh 'echo "${name}"'
+}
+}
+}
+}
